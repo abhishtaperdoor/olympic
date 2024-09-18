@@ -24,7 +24,7 @@
         width: 100%;
         background-color:lightblue;
         position: fixed;
-        padding-bottom: 10px;
+        padding: 1em;
         margin-top : 10px;
       }
       .navbar {
@@ -44,6 +44,10 @@
         text-decoration: none;
         padding: 10px 20px;
         
+      }
+      .nav-item {
+        margin-right: 10px;
+        font-weight: bold;
       }
       #rounded {
         border-radius: 50px;
@@ -73,8 +77,8 @@
       .objects{
         height:50%;
         width: 50%;
-        /* border: 1px solid black; */
-        margin-left: 25%;
+         border: 1px solid black;
+        margin-left :25%;
       }
       table,tr,td{
         height:30%;
@@ -82,6 +86,14 @@
         border:2px solid black;
         border-collapse: collapse;
         margin:20px;
+        padding:20px;
+        
+      }
+      table{
+        border-radius: 50%;
+      }
+      .wide-cell {
+        width: 10%;
       }
     </style>
   </head>
@@ -112,9 +124,43 @@
         <a style="font-weight:bold;font-size:1.1em"id="hlink" href="#">Schedule overview</a>
       </span>
     </div>
-    <div class="objects">
+    <div class="objects"style="display:flex;">
         <img src="pakki.jpg" height="100%" width="50%" alt="pakki">
-        <h2 style="float: right ;">AU REVOIR from paris</h2>
+        <h2 style="margin-right:180px;font-size: 2em;margin-top:10%;"><strong>AU REVOIR</strong><br>from Paris</h2>
     </div>
+    <div style="display: grid; place-items: center; ">
+        <table >
+        <tr>
+            <td class="wide-cell">18:30</td>
+            <td>Football<br>Mens group B(#3)</td>
+         </tr>
+        <tr>
+            <td colspan="2"><img src="argentina.jpg" height="5%" width="5%">Argentina<br>
+              <img src="morraco.jpg" height="5%" width="5%"> Morraco</td>
+        </tr>
+        </table>
+    </div>
+    <div style="display: grid; place-items: center; ">
+      <table >
+      <tr>
+          <td class="wide-cell ">18:30</td>
+          <td>Football<br>Mens group B(#3)</td>
+       </tr>
+      <tr>
+          <td colspan="2">Argentina<br> Morraco</td>
+      </tr>
+      </table>
+  </div>
+  <div style="display: grid; place-items: center; ">
+    <table >
+    <tr>
+        <td class="wide-cell">18:30</td>
+        <td>Football<br>Mens group B(#3)</td>
+     </tr>
+    <tr>
+        <td colspan="2">Argentina<br> Morraco</td>
+    </tr>
+    </table>
+</div>
   </body>
 </html>
