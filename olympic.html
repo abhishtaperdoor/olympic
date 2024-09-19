@@ -1,166 +1,572 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>olympic schedule</title>
-    <style>
-      body {
-        display:block;
-        padding: 0;
-        margin: 0;
-      }
-      .header {
-        height: max-content;
-        width: 100%;
-        background-color: lightblue;
-        border: 2px solid black;
-        position: relative;
-        text-align: center;
-        padding-bottom: 1em;
-      }
-      .stickybar {
-        height: 50px;
-        width: 100%;
-        background-color:lightblue;
-        position: fixed;
-        padding: 1em;
-        margin-top : 10px;
-      }
-      .navbar {
-        padding: 10px;
-      }
-      .navbar ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-      }
-      .navbar li {
-        display: inline;
-      }
-      .navbar a {
-        color: black;
-        text-decoration: none;
-        padding: 10px 20px;
-        
-      }
-      .nav-item {
-        margin-right: 10px;
-        font-weight: bold;
-      }
-      #rounded {
-        border-radius: 50px;
-        /* border: 1px solid black; */
-        background-color: white;
-        gap:10px
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>olympic schedule</title>
+  <style>
+    body {
+      display: block;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    .header {
+      height: max-content;
+      width: 100%;
+      background: linear-gradient(180deg, rgb(21, 21, 218), rgb(31, 122, 233), rgb(0, 174, 255));
+      border: 2px solid black;
+      position: relative;
+      text-align: center;
+      padding-bottom: 1.5em;
+      /* border: 1px solid; */
+    }
+
+    .stickybar {
+      height: 45px;
+      width: 100%;
+      background-color: #294dce;
+      position: fixed;
+      padding: 1em;
+
+    }
+
+    .navbar {
+      padding: 10px;
+    }
+
+    .navbar ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .navbar li {
+      display: inline;
+    }
+
+    .navbar a {
+      color: black;
+      text-decoration: none;
+      padding: 10px 20px;
+
+    }
+
+    .nav-item {
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    #rounded {
+      border-radius: 50px;
+      /* border: 1px solid black; */
+      background-color: white;
+      gap: 10px
+    }
+
+    #linkdiv {
+      background-color: black;
+      padding: 15px;
+      border-radius: 5px;
+
+    }
+
+    #hlink {
+      text-decoration: none;
+      background-color: black;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    #hlink:hover {
+      background-color: rgb(57, 58, 59);
+      border-radius: 5px;
+    }
+
+    .objects {
+      height: 50%;
+      width: 50%;
+      /* border: 1px solid black; */
+      margin-left: 25%;
+    }
+
+    #datehead {
+      background-color: #0a5cce;
+      color: white;
+      padding-left: 10px;
+      padding-top: 1px;
+      padding-bottom: 1px;
+      width: 100%;
+
+    }
+
+    table,
+    tr,
+    td {
+      /* height: 30%; */
+      width: 60%;
+      border: 2px solid black;
+      border-collapse: collapse;
+      margin: 5px;
+      padding: 20px;
+      align-items: center;
+
+    }
 
 
-      }
-      #linkdiv {
-        background-color: black;
-        padding: 15px;
-        border-radius: 5px;
-        
-      }
-      #hlink {
-        text-decoration: none;
-        background-color: black;
-        color: white;
-        padding: 10px;
-        border-radius: 5px;
-      }
-      #hlink:hover {
-        background-color: rgb(57, 58, 59);
-        border-radius: 5px;
-      }
-      .objects{
-        height:50%;
-        width: 50%;
-         border: 1px solid black;
-        margin-left :25%;
-      }
-      table,tr,td{
-        height:30%;
-        width:50%;
-        border:2px solid black;
-        border-collapse: collapse;
-        margin:20px;
-        padding:20px;
-        
-      }
-      table{
-        border-radius: 50%;
-      }
-      .wide-cell {
-        width: 10%;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="header">
-      <div class="stickybar">
-        <nav class="navbar">
-          <ul>
-            <li class="nav-item"><a id="rounded" href="#signup">SIGN UP</a></li>
-            <li class="nav-item"><a id="rounded" href="#results">RESULTS</a></li>
-            <li class="nav-item"><a id="rounded" href="#medaltable">MEDAL TABLE</a></li>
-            <li class="nav-item"><a id="rounded" href="#watchhighlights">WATCH HIGHLIGHTS</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <img
-        src="logo.jpg"
-        alt="logo"
-        height="150px"
-        width="200px"
-        style="padding-top: 75px"
-      />
-      <h3 id="fcolor">Olympic Schedule & Results</h3>
-      <h1 id="fcolor">24 JULY</h1>
-      <span id="linkdiv">
-        <a style="font-weight:bold;font-size: 1.1em;"id="hlink" href="#">Schedule & Results</a>
-        <a style="font-weight:bold;font-size:1.1em"id="hlink" href="#">Schedule overview</a>
-      </span>
+
+    table {
+      border-radius: 50%;
+    }
+
+    .wide-cell {
+      width: 10%;
+    }
+
+    #fcolor {
+      color: white;
+    }
+
+    footer {
+      background-color: black;
+      width: 100%;
+      height: 400px;
+      padding: 20px;
+      line-height: 25px;
+    }
+
+    #div {
+      color: white;
+      /* border: 1px white solid; */
+      height: 45%;
+
+    }
+
+    li {
+      list-style: none;
+    }
+
+    #footnav {
+      color: white;
+      text-decoration: none;
+
+    }
+
+    #matchesTable,
+    #matchesTable1,
+    #matchesTable2,
+    #matchesTable3,
+    #matchesTable4,
+    #matchesTable5,
+    #matchesTable6,
+    #matchesTable7,
+    #matchesTable8,
+    #matchesTable9 {
+      display: none;
+    }
+
+
+    #foot {
+      display: flex;
+      /* align-items: center; */
+      /* margin-left: 10px; */
+      justify-content: space-evenly;
+    }
+
+    #div2 {
+      color: white;
+    }
+  </style>
+</head>
+<!-- HEADER -->
+
+<body>
+  <div class="header">
+    <div class="stickybar">
+      <nav class="navbar">
+        <ul>
+          <li class="nav-item"><a id="rounded" href="#signup">SIGN UP</a></li>
+          <li class="nav-item"><a id="rounded" href="#results">RESULTS</a></li>
+          <li class="nav-item"><a id="rounded" href="#medaltable">MEDAL TABLE</a></li>
+          <li class="nav-item"><a id="rounded" href="#watchhighlights">WATCH HIGHLIGHTS</a>
+          </li>
+        </ul>
+      </nav>
     </div>
-    <div class="objects"style="display:flex;">
-        <img src="pakki.jpg" height="100%" width="50%" alt="pakki">
-        <h2 style="margin-right:180px;font-size: 2em;margin-top:10%;"><strong>AU REVOIR</strong><br>from Paris</h2>
-    </div>
-    <div style="display: grid; place-items: center; ">
-        <table >
-        <tr>
-            <td class="wide-cell">18:30</td>
-            <td>Football<br>Mens group B(#3)</td>
-         </tr>
-        <tr>
-            <td colspan="2"><img src="argentina.jpg" height="5%" width="5%">Argentina<br>
-              <img src="morraco.jpg" height="5%" width="5%"> Morraco</td>
-        </tr>
-        </table>
-    </div>
-    <div style="display: grid; place-items: center; ">
-      <table >
-      <tr>
-          <td class="wide-cell ">18:30</td>
-          <td>Football<br>Mens group B(#3)</td>
-       </tr>
-      <tr>
-          <td colspan="2">Argentina<br> Morraco</td>
-      </tr>
-      </table>
+
+    <img src="logo.jpg" alt="logo" height="150px" width="200px" style="padding-top: 75px" />
+    <h3 id="fcolor">Olympic Schedule & Results</h3>
+    <h1 id="fcolor">24 JULY</h1>
+    <span id="linkdiv">
+      <a style="font-weight:bold;font-size: 1.1em;" id="hlink" href="#">Schedule & Results</a>
+      <a style="font-weight:bold;font-size:1.1em" id="hlink" href="#">Schedule overview</a>
+    </span>
   </div>
+
+  <!--Bird  -->
+  <div class="objects" style="display:flex;">
+    <img src="pakki.jpg" height="100%" width="50%" alt="pakki">
+    <h2 style="margin-right:180px;font-size: 2em;margin-top:10%;"><strong>AU REVOIR</strong><br>from Paris</h2>
+  </div>
+
+  <!-- date -->
+  <div id="datehead">
+    <h1>24 JULY</h1>
+  </div>
+  <!-- Tables -->
   <div style="display: grid; place-items: center; ">
-    <table >
-    <tr>
-        <td class="wide-cell">18:30</td>
-        <td>Football<br>Mens group B(#3)</td>
-     </tr>
-    <tr>
-        <td colspan="2">Argentina<br> Morraco</td>
-    </tr>
+    <table>
+      <tr>
+        <td class="wide-cell"><b>18:30</b></td>
+        <td><b>Football</b>
+          <aside style="float: inline-end;"><button id="showMatchesBtn">+</button></aside><br>Mens group B(#3)
+        </td>
+      </tr>
+      <tr>
+        <table id="matchesTable">
+          <tr>
+            <td colspan="2"><img src="argentina.jpeg" height="5%" width="5%">&nbsp;&nbsp;&nbsp;&nbsp;Argentina<br><br>
+              <img src="morraco.jpeg" height="5%" width="5%">&nbsp;&nbsp;&nbsp; Morraco
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2"><img src="spain.jpeg" height="5%" width="5%">&nbsp;&nbsp;&nbsp;&nbsp;Spain<br><br>
+              <img src="samao.jpeg" height="5%" width="5%">&nbsp;&nbsp;&nbsp; Somao
+            </td>
+          </tr>
+        </table>
     </table>
+
+    <table>
+      <tr>
+        <td class="wide-cell"><b>19:30</b></td>
+        <td><b>Rugby Sevens</b>
+          <aside style="float: inline-end;"><button id="showMatchesBtn1">+</button></aside><br>Mens pool B(#3)
+        </td>
+      </tr>
+      <tr>
+        <table id="matchesTable1">
+          <tr>
+            <td colspan="2"><img src="argentina.jpeg" height="5%" width="5%">&nbsp;&nbsp;&nbsp;&nbsp;Argentina<br><br>
+              <img src="morraco.jpeg" height="5%" width="5%">&nbsp;&nbsp;&nbsp; Morraco
+            </td>
+          <tr>
+            <td colspan="2"><img src="spain.jpeg" height="5%" width="5%">&nbsp;&nbsp;&nbsp;&nbsp;Spain<br><br>
+              <img src="samao.jpeg" height="5%" width="5%">&nbsp;&nbsp;&nbsp; Somao
+            </td>
+          </tr>
+      </tr>
+    </table>
+
+    <table>
+      <tr>
+        <td class="wide-cell"><b>19:30</b></td>
+        <td><b>Badminton</b>
+          <aside style="float: inline-end;"><button id="showMatchesBtn2">+</button></aside><br>Mens pool B(#3)
+        </td>
+      </tr>
+      <tr>
+        <table id="matchesTable2">
+          <tr>
+            <td colspan="2"><img src="argentina.jpeg" height="5%" width="5%">&nbsp;&nbsp;&nbsp;&nbsp;Argentina<br><br>
+              <img src="morraco.jpeg" height="5%" width="5%">&nbsp;&nbsp;&nbsp; Morraco
+            </td>
+          <tr>
+            <td colspan="2"><img src="spain.jpeg" height="5%" width="5%">&nbsp;&nbsp;&nbsp;&nbsp;Spain<br><br>
+              <img src="samao.jpeg" height="5%" width="5%">&nbsp;&nbsp;&nbsp; Somao
+            </td>
+          </tr>
+      </tr>
+    </table>
+
+    <table>
+      <tr>
+        <td class="wide-cell"><b>19:30</b></td>
+        <td><b>Tennis</b>
+          <aside style="float: inline-end;"><button id="showMatchesBtn3">+</button></aside><br>Mens pool B(#3)
+        </td>
+      </tr>
+      <tr>
+        <table id="matchesTable3">
+          <tr>
+            <td colspan="2"><img src="argentina.jpeg" height="5%" width="5%">&nbsp;&nbsp;&nbsp;&nbsp;Argentina<br><br>
+              <img src="morraco.jpeg" height="5%" width="5%">&nbsp;&nbsp;&nbsp; Morraco
+            </td>
+          <tr>
+            <td colspan="2"><img src="spain.jpeg" height="5%" width="5%">&nbsp;&nbsp;&nbsp;&nbsp;Spain<br><br>
+              <img src="samao.jpeg" height="5%" width="5%">&nbsp;&nbsp;&nbsp; Somao
+            </td>
+          </tr>
+      </tr>
+    </table>
+
+
+
+    <table>
+      <tr>
+        <td class="wide-cell"><b>19:30</b></td>
+        <td><b>Tennis</b>
+          <aside style="float: inline-end;"><button id="showMatchesBtn4">+</button></aside><br>Mens pool B(#3)
+        </td>
+      </tr>
+      <tr>
+        <table id="matchesTable4">
+          <tr>
+            <td colspan="2">
+              <img src="argentina.jpeg" height="5%" width="5%">&nbsp;&nbsp;&nbsp;&nbsp;Argentina<br><br>
+              <img src="morraco.jpeg" height="5%" width="5%">&nbsp;&nbsp;&nbsp; Morraco
+            </td>
+          <tr>
+            <td colspan="2">
+              <img src="spain.jpeg" height="5%" width="5%">&nbsp;&nbsp;&nbsp;&nbsp;Spain<br><br>
+              <img src="samao.jpeg" height="5%" width="5%">&nbsp;&nbsp;&nbsp; Somao
+            </td>
+          </tr>
+      </tr>
+    </table>
+
+    <table>
+      <tr>
+        <td class="wide-cell"><b>20:30</b></td>
+        <td><b>Tennis</b>
+          <aside style="float: inline-end;">
+            <button id="showMatchesBtn5">+</button>
+          </aside><br>Mens pool C(#4)
+        </td>
+      </tr>
+    </table>
+    <table id="matchesTable5" >
+      <tr>
+        <td colspan="2">
+          <img src="brazil.jpeg" height="5%" width="5%">&nbsp;&nbsp;&nbsp;&nbsp;Brazil<br><br>
+          <img src="italy.jpeg" height="5%" width="5%">&nbsp;&nbsp;&nbsp; Italy
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <img src="france.jpeg" height="5%" width="5%">&nbsp;&nbsp;&nbsp;&nbsp;France<br><br>
+          <img src="germany.jpeg" height="5%" width="5%">&nbsp;&nbsp;&nbsp; Germany
+        </td>
+      </tr>
+    </table>
+
+    <table>
+      <tr>
+        <td class="wide-cell"><b>21:30</b></td>
+        <td><b>Football</b>
+          <aside style="float: inline-end;">
+            <button id="showMatchesBtn6">+</button>
+          </aside><br>Mens pool D(#5)
+        </td>
+      </tr>
+    </table>
+    <table id="matchesTable6" >
+      <tr>
+        <td colspan="2">
+          <img src="usa.jpeg" height="5%" width="5%">&nbsp;&nbsp;&nbsp;&nbsp;USA<br><br>
+          <img src="canada.jpeg" height="5%" width="5%">&nbsp;&nbsp;&nbsp; Canada
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <img src="mexico.jpeg" height="5%" width="5%">&nbsp;&nbsp;&nbsp;&nbsp;Mexico<br><br>
+          <img src="argentina.jpeg" height="5%" width="5%">&nbsp;&nbsp;&nbsp; Argentina
+        </td>
+      </tr>
+    </table>
+
+    <table>
+      <tr>
+        <td class="wide-cell"><b>22:30</b></td>
+        <td><b>Volleyball</b>
+          <aside style="float: inline-end;">
+            <button id="showMatchesBtn7">+</button>
+          </aside><br>Mens pool E(#6)
+        </td>
+      </tr>
+    </table>
+    <table id="matchesTable7" >
+      <tr>
+        <td colspan="2">
+          <img src="netherlands.jpeg" height="5%" width="5%">&nbsp;&nbsp;&nbsp;&nbsp;Netherlands<br><br>
+          <img src="japan.jpeg" height="5%" width="5%">&nbsp;&nbsp;&nbsp; Japan
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <img src="australia.jpeg" height="5%" width="5%">&nbsp;&nbsp;&nbsp;&nbsp;Australia<br><br>
+          <img src="newzealand.jpeg" height="5%" width="5%">&nbsp;&nbsp;&nbsp; New Zealand
+        </td>
+      </tr>
+    </table>
+
+    <table>
+      <tr>
+        <td class="wide-cell"><b>23:30</b></td>
+        <td><b>Basketball</b>
+          <aside style="float: inline-end;">
+            <button id="showMatchesBtn8">+</button>
+          </aside><br>Mens pool F(#7)
+        </td>
+      </tr>
+    </table>
+    <table id="matchesTable8" >
+      <tr>
+        <td colspan="2">
+          <img src="china.jpeg" height="5%" width="5%">&nbsp;&nbsp;&nbsp;&nbsp;China<br><br>
+          <img src="india.jpeg" height="5%" width="5%">&nbsp;&nbsp;&nbsp; India
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <img src="southafrica.jpeg" height="5%" width="5%">&nbsp;&nbsp;&nbsp;&nbsp;South Africa<br><br>
+          <img src="nigeria.jpeg" height="5%" width="5%">&nbsp;&nbsp;&nbsp; Nigeria
+        </td>
+      </tr>
+    </table>
+
+    <table>
+      <tr>
+        <td class="wide-cell"><b>00:30</b></td>
+        <td><b>Cricket</b>
+          <aside style="float: inline-end;">
+            <button id="showMatchesBtn9">+</button>
+          </aside><br>Mens pool G(#8)
+        </td>
+      </tr>
+    </table>
+    <table id="matchesTable9" >
+      <tr>
+        <td colspan="2">
+          <img src="pakistan.jpeg" height="5%" width="5%">&nbsp;&nbsp;&nbsp;&nbsp;Pakistan<br><br>
+          <img src="bangladesh.jpeg" height="5%" width="5%">&nbsp;&nbsp;&nbsp; Bangladesh
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <img src="srilanka.jpeg" height="5%" width="5%">&nbsp;&nbsp;&nbsp;&nbsp;Sri Lanka<br><br>
+          <img src="afghanistan.jpeg" height="5%" width="5%">&nbsp;&nbsp;&nbsp; Afghanistan
+        </td>
+      </tr>
+    </table>
+  </div>
+
+    <!-- 25 july -->
+
+  <div id="datehead">
+    <h1>25 JULY</h1>
+  </div>
+
+  <div style="display: grid; place-items: center; ">
+  <table>
+    <tr>
+      <td class="wide-cell"><b>00:30</b></td>
+      <td><b>Cricket</b>
+        <aside style="float: inline-end;">
+          <button id="showMatchesBtn10">+</button>
+        </aside><br>Mens pool G(#8)
+      </td>
+    </tr>
+  </table>
+  <table id="matchesTable10" >
+    <tr>
+      <td colspan="2">
+        <img src="pakistan.jpeg" height="5%" width="5%">&nbsp;&nbsp;&nbsp;&nbsp;Pakistan<br><br>
+        <img src="bangladesh.jpeg" height="5%" width="5%">&nbsp;&nbsp;&nbsp; Bangladesh
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <img src="srilanka.jpeg" height="5%" width="5%">&nbsp;&nbsp;&nbsp;&nbsp;Sri Lanka<br><br>
+        <img src="afghanistan.jpeg" height="5%" width="5%">&nbsp;&nbsp;&nbsp; Afghanistan
+      </td>
+    </tr>
+  </table>
 </div>
-  </body>
+  
+
+
+
+  <!-- footer -->
+  <footer>
+
+    <div id="foot">
+      <div id="div"><img src="qlsoowjb.png" alt="logo" width="120px" height="130px"></div>
+      <div id="div">
+        <h3>Olympic Games</h3>
+        <ul>
+          <li><a id=footnav href="#">Schedule & Results</a></li>
+          <li><a id=footnav href="#">Medals table</a></li>
+          <li><a id=footnav href="#">Sports</a></li>
+          <li><a id=footnav href="#">Venue</a></li>
+        </ul>
+      </div>
+      <div id="div">
+        <h3>Celebrating the Games</h3>
+        <ul>
+          <li><a id=footnav href="#">Celebrating the Games</a></li>
+          <li><a id=footnav href="#">Champion park</a></li>
+        </ul>
+      </div>
+      <div id="div">
+        <h3>Olympic Games</h3>
+        <ul>
+          <li><a id=footnav href="#">Spectators</a></li>
+          <li><a id=footnav href="#">Spectator info</a></li>
+          <li><a id=footnav href="#">Ticketing</a></li>
+          <li><a id=footnav href="#">The Games' Shop</a></li>
+          <li><a id=footnav href="#">Questions?</a></li>
+        </ul>
+      </div>
+      <div id="div">
+        <h3>Olympic Games</h3>
+        <ul>
+          <li><a id=footnav href="#">Schedule & Results</a></li>
+          <li><a id=footnav href="#">Medals table</a></li>
+          <li><a id=footnav href="#">Sports</a></li>
+          <li><a id=footnav href="#">Venue</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="background-color: white;" id="div2"></div>
+    <h3 style="color: white;">Download the Official App</h3>
+    </div>
+
+    <script>
+      const toggleTableVisibility = (btnId, tableId) => {
+        const button = document.getElementById(btnId);
+        const table = document.getElementById(tableId);
+
+        button.addEventListener('click', function () {
+          if (table.style.display === "none" || table.style.display === "") {
+            table.style.display = "table";
+            button.textContent = "-";
+          } else {
+            table.style.display = "none";
+            button.textContent = "+";
+          }
+        });
+      };
+
+      toggleTableVisibility('showMatchesBtn', 'matchesTable');
+      toggleTableVisibility('showMatchesBtn1', 'matchesTable1');
+      toggleTableVisibility('showMatchesBtn2', 'matchesTable2');
+      toggleTableVisibility('showMatchesBtn3', 'matchesTable3');
+      toggleTableVisibility('showMatchesBtn4', 'matchesTable4');
+      toggleTableVisibility('showMatchesBtn5', 'matchesTable5');
+      toggleTableVisibility('showMatchesBtn6', 'matchesTable6');
+      toggleTableVisibility('showMatchesBtn7', 'matchesTable7');
+      toggleTableVisibility('showMatchesBtn8', 'matchesTable8');
+      toggleTableVisibility('showMatchesBtn9', 'matchesTable9');
+      toggleTableVisibility('showMatchesBtn10', 'matchesTable10');
+    </script>
+
+  </footer>
+</body>
+
 </html>
